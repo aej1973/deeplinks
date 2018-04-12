@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="hd-color">   
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="bg-image">  
+  <h4 text-center class="padding-top">
+    <b>WELCOME</b>
+  </h4>
+  <form [formGroup]="customerInfoForm" (ngSubmit)="submit(customerInfoForm.value)">
+    <ion-list>
+      <ion-list-header>User Information</ion-list-header>
+      <ion-row>
+        <ion-item class="text-size">Project ID: {{appLoadInfo.projectid}}</ion-item>
+        <ion-input formControlName="projectid" type="hidden" value={{appLoadInfo.projectid}}></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-item class="text-size">Customer First Name: {{appLoadInfo.firstname}}</ion-item>
+        <ion-input formControlName="firstname" type="hidden" value={{appLoadInfo.firstname}}></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-item class="text-size">Customer Last Name: {{appLoadInfo.lastname}}</ion-item>
+        <ion-input formControlName="lastname" type="hidden" value={{appLoadInfo.lastname}}></ion-input>
+      </ion-row>
+      <ion-row>
+        <ion-item class="text-size">User Name: {{appLoadInfo.username}}</ion-item>
+        <ion-input formControlName="username" type="hidden" value={{appLoadInfo.username}}></ion-input>
+      </ion-row> 
+    </ion-list>
+    <div class="padding-top">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 text-center>
+            <button ion-button class="customBtn" round color="hd-color" icon-right>
+              NEXT
+              <ion-icon name="arrow-dropright-circle"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </form>
+</ion-content>

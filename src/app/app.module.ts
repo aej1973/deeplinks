@@ -1,8 +1,9 @@
+import { LandingPage } from './../pages/landing/landing';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-
+import { Deeplinks } from '@ionic-native/deeplinks';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -17,7 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LandingPage
   ],
   imports: [
     BrowserModule,
@@ -29,11 +31,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LandingPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Deeplinks,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
